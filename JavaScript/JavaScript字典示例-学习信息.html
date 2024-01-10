@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript字典示例-学习信息</title>
+  <script>
+    // 自定义字典类
+    function Dictionary() {
+      this.dataStore = {};
+      this.add = function (key, value) {
+        this.dataStore[key] = value;
+      };
+      this.find = function (key) {
+        return this.dataStore[key];
+      };
+      this.remove = function (key) {
+        delete this.dataStore[key];
+      };
+    }
+
+    // 创建一个字典实例用于存储学生信息
+    var studentDict = new Dictionary();
+
+    // 根据输入添加学生信息
+    function addStudent() {
+      var name = document.getElementById("nameInput").value;
+      var score = document.getElementById("scoreInput").value;
+      studentDict.add(name, score);
+      console.log(studentDict.dataStore);
+    }
+
+    // 根据输入查找学生的成绩
+    function searchStudent() {
+      var name = document.getElementById("searchInput").value;
+      var score = studentDict.find(name);
+      if (score !== undefined) {
+        document.getElementById("result").textContent = score;
+      } else {
+        document.getElementById("result").textContent = "没有找到相关数据";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <input type="text" placeholder="输入名字" id="nameInput">
+  <input type="text" placeholder="输入成绩" id="scoreInput">
+  <button onclick="addStudent()">添加学生</button>
+  <br><br>
+  <input type="text" placeholder="输入要搜索的名字" id="searchInput">
+  <button onclick="searchStudent()">搜索学生</button>
+  <br><br>
+  <label for="result">结果: </label>
+  <span id="result"></span>
+
+</body>
+
+</html>
