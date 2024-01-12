@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript实现树的案例</title>
+</head>
+
+<body>
+  <button onclick="addRoot()">添加根节点</button>
+  <button onclick="addChild()">添加子节点</button>
+  <button onclick="traversePreorder()">先序遍历树</button>
+  <button onclick="traverseInorder()">中序遍历树</button>
+  <button onclick="traversePostorder()">后序遍历树</button>
+  <br><br>
+  <label for="findInput">查找节点: </label>
+  <input type="text" id="findInput" placeholder="请输入">
+  <button onclick="findNode()">查找节点</button>
+  <br><br>
+  <label for="result">结果: </label>
+  <span id="result"></span>
+  <script src="tree.js"></script>
+</body>
+
+</html>

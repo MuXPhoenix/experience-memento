@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Search Tree</title>
+  <!-- 引入 SVG.js 库 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.15/svg.min.js"></script>
+  <style>
+    .node {
+      fill: #3498db;
+    }
+
+    .node-value {
+      font-size: 14px;
+      fill: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 在这里创建 SVG 容器 -->
+  <div id="svg-container"></div>
+
+  <script>
+    // JavaScript 代码
+    document.addEventListener("DOMContentLoaded", function () {
+      // 创建 SVG 容器
+      var draw = SVG().addTo('#svg-container').size(800, 600);
+
+      // 创建二叉搜索树类
+      class BinarySearchTree {
+        constructor() {
+          this.root = null;
+          this.draw = draw;
+        }
+
+        createCircle(value, x, y) {
+          let circle = this.draw.circle(30).move(x, y).addClass('node');
+          let text = this.draw.plain(value).move(x - 10, y - 10).addClass('node-value');
+          return { circle, text };
+        }
+
+        insert(value) {
+          this.root = this._insert(this.root, value, 400, 30, 400);
+        }
+
+        _insert(root, value, x, y, distance) {
+          if (!root) {
+            return this.createCircle(value, x, y);
+          }
+
+          if (value < root.value) {
+            root.left = this._insert(root.left, value, x - distance / 2, y + 50, distance / 2);
+          } else if (value > root.value) {
+            root.right = this._insert(root.right, value, x + distance / 2, y + 50, distance / 2);
+          }
+
+          return this.createCircle(root.value, x, y);
+        }
+      }
+
+      // 创建二叉搜索树实例
+      var bst = new BinarySearchTree();
+
+      // 插入节点
+      bst.insert(50);
+      bst.insert(30);
+      bst.insert(70);
+
+
+      // 可以继续插入更多节点...
+      bst.insert(100);
+      bst.insert(130);
+      bst.insert(170);
+
+    });
+  </script>
+</body>
+
+</html>

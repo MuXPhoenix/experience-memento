@@ -6,6 +6,7 @@
 
 - [JavaScript 链表示例](./JavaScript/JavaScript链表示例.html)
 - [JavaScript 字典示例-学习信息](./JavaScript/JavaScript字典示例-学习信息.html)
+- [JavaScript 散列表示例](./JavaScript/JavaScript散列表示例.html)
 
 ## Vue
 
