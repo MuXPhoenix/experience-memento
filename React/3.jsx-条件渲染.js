@@ -1,6 +1,6 @@
 const isLogin = true
 
-function App () {
+function App() {
   return (
     <div className="App">
       {/* 逻辑与 && */}

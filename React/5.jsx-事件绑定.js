@@ -1,5 +1,4 @@
-
-function App () {
+function App() {
   // 基础绑定
   // const handleClick = () => {
   //   console.log('button被点击了')
@@ -21,7 +20,7 @@ function App () {
   }
   return (
     <div className="App">
-      <button onClick={(e) => handleClick('jack', e)}>click me </button>
+      <button onClick={e => handleClick('jack', e)}>click me </button>
     </div>
   )
 }

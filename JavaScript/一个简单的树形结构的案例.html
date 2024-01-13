@@ -2,18 +2,20 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
 </head>
 
 <body>
   <div id="tree">
     <ul>
-      <li>根节点
+      <li>
+        根节点
         <ul>
           <li>子节点1</li>
-          <li>子节点2
+          <li>
+            子节点2
             <ul>
               <li>孙节点1</li>
               <li>孙节点2</li>
@@ -25,20 +27,20 @@
   </div>
   <script>
     // 获取根节点
-    var rootNode = document.getElementById('tree');
+    var rootNode = document.getElementById('tree')
     // 获取所有节点
-    var nodes = rootNode.getElementsByTagName('li');
+    var nodes = rootNode.getElementsByTagName('li')
 
     // 递归遍历所有节点，为每个节点添加事件
     function addEvents(node) {
       // 获取子节点列表
-      var children = node.children[0];
+      var children = node.children[0]
       // 判断是否存在子节点
       if (children) {
         // 遍历子节点
         for (var i = 0; i < children.children.length; i++) {
           // 递归调用添加事件函数
-          addEvents(children.children[i]);
+          addEvents(children.children[i])
         }
       }
       // 为当前节点添加点击事件
@@ -46,20 +48,19 @@
         // 判断是否存在子节点，并根据子节点状态展开或收起树
         if (children) {
           if (children.style.display === 'none') {
-            children.style.display = 'block';
+            children.style.display = 'block'
           } else {
-            children.style.display = 'none';
+            children.style.display = 'none'
           }
         }
-      });
+      })
     }
 
     // 遍历所有节点，添加事件
     for (var i = 0; i < nodes.length; i++) {
-      addEvents(nodes[i]);
+      addEvents(nodes[i])
     }
   </script>
-
 </body>
 
 </html>

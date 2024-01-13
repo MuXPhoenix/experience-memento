@@ -2,67 +2,67 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JavaScript散列表-学习信息</title>
 </head>
 
 <body>
-  <input type="text" placeholder="输入名字" id="nameInput">
-  <input type="text" placeholder="输入成绩" id="scoreInput">
+  <input type="text" placeholder="输入名字" id="nameInput" />
+  <input type="text" placeholder="输入成绩" id="scoreInput" />
   <button onclick="addStudent()">添加学生</button>
-  <br><br>
-  <input type="text" placeholder="输入要搜索的名字" id="searchInput">
+  <br /><br />
+  <input type="text" placeholder="输入要搜索的名字" id="searchInput" />
   <button onclick="searchStudent()">搜索学生</button>
-  <br><br>
+  <br /><br />
   <label for="result">结果: </label>
   <span id="result"></span>
   <script>
     // 自定义散列函数
     function hashFunction(key) {
-      var hash = 0;
+      var hash = 0
       for (var i = 0; i < key.length; i++) {
-        hash += key.charCodeAt(i);
+        hash += key.charCodeAt(i)
       }
-      return hash % 100; // 假设散列表有 100 个位置
+      return hash % 100 // 假设散列表有 100 个位置
     }
 
     // 自定义散列表类
     function HashTable() {
-      this.table = new Array(100); // 创建一个大小为 100 的数组作为散列表
+      this.table = new Array(100) // 创建一个大小为 100 的数组作为散列表
       this.add = function (key, value) {
-        var index = hashFunction(key);
-        this.table[index] = value;
-      };
+        var index = hashFunction(key)
+        this.table[index] = value
+      }
       this.remove = function (key) {
-        var index = hashFunction(key);
-        this.table[index] = undefined;
-      };
+        var index = hashFunction(key)
+        this.table[index] = undefined
+      }
       this.find = function (key) {
-        var index = hashFunction(key);
-        return this.table[index];
-      };
+        var index = hashFunction(key)
+        return this.table[index]
+      }
     }
 
     // 创建一个散列表实例用于存储学生信息
-    var studentHash = new HashTable();
+    var studentHash = new HashTable()
 
     // 根据输入添加学生信息
     function addStudent() {
-      var name = document.getElementById("nameInput").value;
-      var score = document.getElementById("scoreInput").value;
-      studentHash.add(name, score);
-      console.log(studentHash.table);
+      var name = document.getElementById('nameInput').value
+      var score = document.getElementById('scoreInput').value
+      studentHash.add(name, score)
+      console.log(studentHash.table)
     }
 
     // 根据输入查找学生的成绩
     function searchStudent() {
-      var name = document.getElementById("searchInput").value;
-      var score = studentHash.find(name);
+      var name = document.getElementById('searchInput').value
+      var score = studentHash.find(name)
       if (score !== undefined) {
-        document.getElementById("result").textContent = score;
+        document.getElementById('result').textContent = score
       } else {
-        document.getElementById("result").textContent = "没有找到相关数据";
+        document.getElementById('result').textContent = '没有找到相关数据'
       }
     }
   </script>

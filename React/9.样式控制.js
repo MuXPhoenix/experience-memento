@@ -6,7 +6,7 @@ const style = {
   fontSize: '50px'
 }
 
-function App () {
+function App() {
   return (
     <div>
       {/* 行内样式控制 */}

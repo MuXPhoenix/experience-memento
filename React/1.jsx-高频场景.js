@@ -3,11 +3,11 @@
 
 const count = 100
 
-function getName () {
+function getName() {
   return 'jack'
 }
 
-function App () {
+function App() {
   return (
     <div className="App">
       this is App

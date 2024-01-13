@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function App () {
+function App() {
   let [count, setCount] = useState(0)
 
   const handleClick = () => {
@@ -9,7 +9,6 @@ function App () {
     // console.log(count)
     setCount(count + 1)
   }
-
 
   // 修改对象状态
   const [form, setForm] = useState({ name: '星辰' })

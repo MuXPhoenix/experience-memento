@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学生管理系统</title>
+  <style>
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type='text'] {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>学生管理系统</h2>
+  <h3>添加学生</h3>
+  <label for="name">姓名:</label>
+  <input type="text" id="name" />
+  <label for="age">年龄:</label>
+  <input type="text" id="age" />
+  <button onclick="addStudent()">添加学生</button>
+
+  <h3>学生列表</h3>
+  <ul id="studentList"></ul>
+
+  <script>
+    const students = []
+
+    function addStudent() {
+      const nameInput = document.getElementById('name')
+      const ageInput = document.getElementById('age')
+
+      const name = nameInput.value
+      const age = ageInput.value
+
+      if (name && age) {
+        const student = { name, age }
+        students.push(student)
+
+        nameInput.value = ''
+        ageInput.value = ''
+
+        displayStudents()
+      }
+    }
+
+    function deleteStudent(index) {
+      students.splice(index, 1)
+      displayStudents()
+    }
+
+    function displayStudents() {
+      const studentList = document.getElementById('studentList')
+      studentList.innerHTML = ''
+
+      students.forEach((student, index) => {
+        const listItem = document.createElement('li')
+        listItem.textContent = `${student.name} (年龄: ${student.age})`
+
+        const deleteButton = document.createElement('button')
+        deleteButton.textContent = '删除'
+        deleteButton.onclick = () => deleteStudent(index)
+
+        listItem.appendChild(deleteButton)
+        studentList.appendChild(listItem)
+      })
+    }
+  </script>
+</body>
+
+</html>

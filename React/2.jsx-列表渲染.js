@@ -1,11 +1,10 @@
-
 const list = [
   { id: 1001, name: 'Vue' },
   { id: 1002, name: 'React' },
   { id: 1003, name: 'Angular' }
 ]
 
-function App () {
+function App() {
   return (
     <div className="App">
       this is App
@@ -14,7 +13,9 @@ function App () {
       {/* 注意事项：加上一个独一无二的key 字符串或者number id */}
       {/* key的作用：React框架内部使用 提升更新性能的 */}
       <ul>
-        {list.map(item => <li key={item.id}>{item.name}</li>)}
+        {list.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))}
       </ul>
     </div>
   )

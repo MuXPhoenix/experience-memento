@@ -2,43 +2,43 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JavaScript字典示例-学习信息</title>
   <script>
     // 自定义字典类
     function Dictionary() {
-      this.dataStore = {};
+      this.dataStore = {}
       this.add = function (key, value) {
-        this.dataStore[key] = value;
-      };
+        this.dataStore[key] = value
+      }
       this.find = function (key) {
-        return this.dataStore[key];
-      };
+        return this.dataStore[key]
+      }
       this.remove = function (key) {
-        delete this.dataStore[key];
-      };
+        delete this.dataStore[key]
+      }
     }
 
     // 创建一个字典实例用于存储学生信息
-    var studentDict = new Dictionary();
+    var studentDict = new Dictionary()
 
     // 根据输入添加学生信息
     function addStudent() {
-      var name = document.getElementById("nameInput").value;
-      var score = document.getElementById("scoreInput").value;
-      studentDict.add(name, score);
-      console.log(studentDict.dataStore);
+      var name = document.getElementById('nameInput').value
+      var score = document.getElementById('scoreInput').value
+      studentDict.add(name, score)
+      console.log(studentDict.dataStore)
     }
 
     // 根据输入查找学生的成绩
     function searchStudent() {
-      var name = document.getElementById("searchInput").value;
-      var score = studentDict.find(name);
+      var name = document.getElementById('searchInput').value
+      var score = studentDict.find(name)
       if (score !== undefined) {
-        document.getElementById("result").textContent = score;
+        document.getElementById('result').textContent = score
       } else {
-        document.getElementById("result").textContent = "没有找到相关数据";
+        document.getElementById('result').textContent = '没有找到相关数据'
       }
     }
   </script>
@@ -46,16 +46,15 @@
 
 <body>
   <!-- 字典是一种存储键-值对数据的数据结构，可以通过唯一的键来访问对应的值。这种数据结构可以在不需要使用数组的情况下，快速地查找、插入和删除数据。 -->
-  <input type="text" placeholder="输入名字" id="nameInput">
-  <input type="text" placeholder="输入成绩" id="scoreInput">
+  <input type="text" placeholder="输入名字" id="nameInput" />
+  <input type="text" placeholder="输入成绩" id="scoreInput" />
   <button onclick="addStudent()">添加学生</button>
-  <br><br>
-  <input type="text" placeholder="输入要搜索的名字" id="searchInput">
+  <br /><br />
+  <input type="text" placeholder="输入要搜索的名字" id="searchInput" />
   <button onclick="searchStudent()">搜索学生</button>
-  <br><br>
+  <br /><br />
   <label for="result">结果: </label>
   <span id="result"></span>
-
 </body>
 
 </html>
