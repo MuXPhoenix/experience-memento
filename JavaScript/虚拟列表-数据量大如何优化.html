@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>数据量大如何优化</title>
+  <style>
+    .container {
+      height: 720px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .content {
+      height: auto;
+    }
+
+    .item {
+      height: 30px;
+      border: 1px solid lightblue;
+      margin-bottom: 5px;
+      padding: 0 10px;
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>无限滚动的虚拟列表</h1>
+  <div class="container">
+    <div class="content"></div>
+  </div>
+
+  <script>
+    const pageSize = 50 // 每页加载的数据项数量
+    const container = document.querySelector('.container')
+    const content = document.querySelector('.content')
+    let currentPage = 1
+
+    // 渲染指定范围的数据项
+    function renderList(start, end) {
+      for (let i = start; i < end; i++) {
+        const listItem = document.createElement('div')
+        listItem.classList.add('item')
+        listItem.textContent = `Item ${i + 1}`
+        content.appendChild(listItem)
+      }
+    }
+
+    // 加载更多数据
+    function loadMoreData() {
+      const start = (currentPage - 1) * pageSize
+      const end = currentPage * pageSize
+
+      renderList(start, end)
+      currentPage++
+    }
+
+    // 监听滚动事件
+    container.addEventListener('scroll', () => {
+      const scrollTop = container.scrollTop
+      const containerHeight = container.clientHeight
+      const contentHeight = content.clientHeight
+
+      // 判断是否滚动到底部
+      if (scrollTop + containerHeight >= contentHeight) {
+        loadMoreData()
+      }
+    })
+
+    loadMoreData() // 初始加载第一页数据
+  </script>
+</body>
+
+</html>

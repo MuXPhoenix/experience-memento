@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Virtual Scroller虚拟滚动列表</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-virtual-scroller@2.3.4"></script>
+  <style>
+    .item {
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #ccc;
+      margin-bottom: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <div v-virtual-scroller="{ items: items, itemHeight: 30 }">
+        <div class="item" v-for="(item, index) in items" :key="index">{{ item.text }}</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        items: []
+      },
+      created() {
+        for (let i = 0; i < 1000; i++) {
+          this.items.push({ text: `Item ${i + 1}` })
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
