@@ -1,10 +1,5 @@
 # 知识点案例记录
 
-## Html/css
-
-- [圣杯布局](./Htmlcss/圣杯布局.html)
-- [双飞翼布局](./Htmlcss/双飞翼布局.html)
-
 ## JavaScript
 
 - [将 RGB 转换为十六进制](./JavaScript/将RGB转换为十六进制.html)
@@ -36,5 +31,10 @@
 - [8.理解状态不可变.js](./React/8.理解状态不可变.js)
 - [9.样式控制.js](./React/9.样式控制.js)
 - [虚拟列表](./React/虚拟列表.js)
+
+## Html/css
+
+- [圣杯布局](./Htmlcss/圣杯布局.html)
+- [双飞翼布局](./Htmlcss/双飞翼布局.html)
 
 ## node
