@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻转字符串</title>
+</head>
+
+<body>
+  <h1>翻转字符串</h1>
+  <input type="text" id="inputString" placeholder="输入字符串">
+  <button onclick="reverseString()">翻转</button>
+  <p id="reversedResult"></p>
+
+  <script>
+    const reverse = str => str.split('').reverse().join('');
+
+    function reverseString() {
+      const inputStr = document.getElementById("inputString").value;
+      const resultDisplay = document.getElementById("reversedResult");
+      const reversedStr = reverse(inputStr);
+      resultDisplay.textContent = "结果: " + reversedStr;
+    }
+  </script>
+</body>
+
+</html>

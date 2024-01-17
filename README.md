@@ -16,6 +16,9 @@
 - [JavaScript 图示例](./JavaScript/JavaScript图示例.html)
 - [JavaScript 字典示例-学习信息](./JavaScript/JavaScript字典示例-学习信息.html)
 - [虚拟列表-数据量大如何优化](./JavaScript/虚拟列表-数据量大如何优化.html)
+- [字符串首字母大写](./JavaScript/字符串首字母大写.html)
+- [翻转字符串](./JavaScript/翻转字符串.html)
+- [获取用户选定的文本](./JavaScript/获取用户选定的文本.html)
 
 ## Vue
 

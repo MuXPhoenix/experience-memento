@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串首字母大写</title>
+</head>
+
+<body>
+  <input type="text" id="inputString" placeholder="输入字符串">
+  <button onclick="capitalizeString()">点击首字母大写</button>
+  <p id="result"></p>
+
+  <script>
+    const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1);
+
+    function capitalizeString() {
+      const inputStr = document.getElementById('inputString').value;
+      const capitalizedStr = capitalize(inputStr);
+      document.getElementById('result').innerText = `字符串首字母大写: ${capitalizedStr}`;
+    }
+  </script>
+</body>
+
+</html>
