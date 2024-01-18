@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta ch****t="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue2实现翻转字符串</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input v-model="inputText" placeholder="输入一个字符串" />
+    <p>{{ reversedText }}</p>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          inputText: ''
+        }
+      },
+      computed: {
+        reversedText() {
+          if (this.inputText) {
+            return this.inputText.split('').reverse().join('')
+          } else {
+            return ''
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
