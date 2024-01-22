@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组的常用方法</title>
+  </head>
+  <body>
+    <div id="beforeOperation">
+      <h2>Array (Before Operation)</h2>
+      <pre id="arrayBefore"></pre>
+    </div>
+
+    <div id="afterOperation">
+      <h2>Array (After Operation)</h2>
+      <pre id="arrayAfter"></pre>
+    </div>
+
+    <script>
+      // Original array
+      const originalArray = [1, 2, 3, 4, 5]
+      document.getElementById('arrayBefore').innerText = JSON.stringify(originalArray, null, 2)
+
+      // push()
+      originalArray.push(6, 7)
+      displayResult('push()', originalArray)
+
+      // pop()
+      originalArray.pop()
+      displayResult('pop()', originalArray)
+
+      // unshift()
+      originalArray.unshift(0, -1)
+      displayResult('unshift()', originalArray)
+
+      // shift()
+      originalArray.shift()
+      displayResult('shift()', originalArray)
+
+      // concat()
+      const newArray = originalArray.concat([8, 9])
+      displayResult('concat()', newArray)
+
+      // slice()
+      const slicedArray = originalArray.slice(1, 4)
+      displayResult('slice()', slicedArray)
+
+      // splice()
+      originalArray.splice(1, 2, 'a', 'b')
+      displayResult('splice()', originalArray)
+
+      // indexOf()
+      const index = originalArray.indexOf('a')
+      displayResult('indexOf()', index)
+
+      // includes()
+      const includesResult = originalArray.includes('c')
+      displayResult('includes()', includesResult)
+
+      // join()
+      const joinedString = originalArray.join('-')
+      displayResult('join()', joinedString)
+
+      // reverse()
+      originalArray.reverse()
+      displayResult('reverse()', originalArray)
+
+      // sort()
+      originalArray.sort()
+      displayResult('sort()', originalArray)
+
+      // filter()
+      const filteredArray = originalArray.filter(item => typeof item === 'number')
+      displayResult('filter()', filteredArray)
+
+      // map()
+      const mappedArray = originalArray.map(item => item * 2)
+      displayResult('map()', mappedArray)
+
+      // reduce()
+      const reducedValue = originalArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+      displayResult('reduce()', reducedValue)
+
+      // forEach()
+      originalArray.forEach(item => console.log(item)) // Just for side effect, no displayResult for forEach
+
+      function displayResult(operation, result) {
+        document.getElementById('arrayAfter').innerText += `${operation}: ${JSON.stringify(result, null, 2)}\n\n`
+      }
+    </script>
+  </body>
+</html>

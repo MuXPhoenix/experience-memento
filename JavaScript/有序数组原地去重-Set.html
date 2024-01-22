@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>有序数组原地去重-Set方法</title>
+  </head>
+  <body>
+    <script>
+      function removeDuplicates(arr) {
+        const uniqueArray = [...new Set(arr)]
+        return uniqueArray
+      }
+
+      // 示例
+      const originalArray = [1, 2, 2, 3, 4, 4, 5]
+      const uniqueArray = removeDuplicates(originalArray)
+
+      document.write('<p>原始数组: ' + originalArray.join(', ') + '</p>')
+      document.write('<p>去重数组: ' + uniqueArray.join(', ') + '</p>')
+    </script>
+  </body>
+</html>

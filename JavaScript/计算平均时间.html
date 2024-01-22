@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>计算平均时间</title>
+  </head>
+  <body>
+    <script>
+      // 将时间字符串转换为分钟
+      function timeToMinutes(time) {
+        const [hours, minutes] = time.split(':').map(Number)
+        return hours * 60 + minutes
+      }
+
+      // 将分钟转换为时间字符串
+      function minutesToTime(minutes) {
+        const hours = Math.floor(minutes / 60)
+        const remainingMinutes = minutes % 60
+        return `${hours}:${remainingMinutes < 10 ? '0' : ''}${remainingMinutes}`
+      }
+
+      // 计算时间数组的平均值
+      function calculateAverageTime(timeArray) {
+        const totalMinutes = timeArray.reduce((total, time) => total + timeToMinutes(time), 0)
+        const averageMinutes = Math.round(totalMinutes / timeArray.length)
+        return minutesToTime(averageMinutes)
+      }
+
+      // 示例
+      const originalTimes = ['9:15', '8:32', '14:26']
+      const averageTime = calculateAverageTime(originalTimes)
+
+      document.write('<p>原始时间: ' + originalTimes.join(', ') + '</p>')
+      document.write('<p>平均时间: ' + averageTime + '</p>')
+    </script>
+  </body>
+</html>

@@ -14,6 +14,12 @@
 - [字符串首字母大写](./JavaScript/字符串首字母大写.html)
 - [翻转字符串](./JavaScript/翻转字符串.html)
 - [获取用户选定的文本](./JavaScript/获取用户选定的文本.html)
+- [计算平均时间](./JavaScript/计算平均时间.html)
+- [树到数组的转换-迭代法](./JavaScript/树到数组的转换-迭代法.html)
+- [树到数组的转换-递归法](./JavaScript/树到数组的转换-递归法.html)
+- [数组的常用方法](./JavaScript/数组的常用方法.html)
+- [有序数组原地去重-Set](./JavaScript/有序数组原地去重-Set.html)
+- [有序数组原地去重-双指针遍历](./JavaScript/有序数组原地去重-双指针遍历.html)
 
 ## Vue
 

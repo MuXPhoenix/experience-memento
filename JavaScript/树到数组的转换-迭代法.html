@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>树到数组的转换-迭代法</title>
+  </head>
+  <body>
+    <div id="beforeConversion">
+      <h2>树状结构(转换前)</h2>
+      <pre id="treeBefore"></pre>
+    </div>
+
+    <div id="afterConversion">
+      <h2>数组结构(转换后)</h2>
+      <pre id="arrayAfter"></pre>
+    </div>
+
+    <script>
+      const treeData = {
+        id: 1,
+        name: 'Node 1',
+        children: [
+          {
+            id: 2,
+            name: 'Node 1.1',
+            children: [
+              {
+                id: 4,
+                name: 'Node 1.1.1'
+              },
+              {
+                id: 5,
+                name: 'Node 1.1.2'
+              }
+            ]
+          },
+          {
+            id: 3,
+            name: 'Node 1.2'
+          }
+        ]
+      }
+
+      function treeToArrayStack(root) {
+        const stack = [root]
+        const result = []
+
+        while (stack.length > 0) {
+          const node = stack.pop()
+          result.push({ ...node })
+
+          if (node.children) {
+            stack.push(...node.children.reverse())
+            delete result[result.length - 1].children
+          }
+        }
+
+        return result
+      }
+
+      const arrayResultStack = treeToArrayStack(treeData)
+
+      document.getElementById('treeBefore').innerText = JSON.stringify(treeData, null, 2)
+      document.getElementById('arrayAfter').innerText = JSON.stringify(arrayResultStack, null, 2)
+    </script>
+  </body>
+</html>
