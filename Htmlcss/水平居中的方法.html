@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>水平居中的方法</title>
+    <style>
+      /* 通用样式 */
+      .container {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* 行内元素使用 text-align */
+      .text-align-center .content {
+        display: inline-block;
+      }
+
+      /* 固定宽度元素使用 margin: auto */
+      .margin-auto .content-fixed-width {
+        width: 200px; /* Example fixed width */
+        margin: 0 auto;
+      }
+
+      /* 绝对定位元素使用相对定位 */
+      .absolute-positioning {
+        position: relative;
+      }
+
+      .absolute-positioning .content-absolute {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+
+      /* Flexbox 布局 */
+      .flexbox-method {
+        display: flex;
+        justify-content: center;
+      }
+
+      /* 表格单元格显示方法 */
+      .table-cell-method {
+        display: table;
+      }
+
+      .table-cell-method .content-table-cell {
+        display: table-cell;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-align-center">
+      <span class="content">行内元素使用 text-align：通过设置父元素的 text-align: center，内联元素可以水平居中。</span>
+    </div>
+
+    <div class="container margin-auto">
+      <div class="content-fixed-width">固定宽度元素使用 margin: auto：当元素有固定宽度时，可以通过设置左右 margin 为 auto 来实现水平居中。</div>
+    </div>
+
+    <div class="container absolute-positioning">
+      <div class="content-absolute">绝对定位元素使用相对定位：将父元素设置为 position: relative，子元素设置为 position: absolute; left: 0; right: 0; margin: auto; 实现水平居中。</div>
+    </div>
+
+    <div class="container flexbox-method">
+      <div class="content-flexbox">Flexbox 布局：使用 display: flex 并指定 justify-content: center 属性来实现水平居中。</div>
+    </div>
+
+    <div class="container table-cell-method">
+      <div class="content-table-cell">表格单元格显示方法：通过将容器设置为 display: table，内容设置为 display: table-cell 实现水平居中。</div>
+    </div>
+    <div>
+      在使用绝对定位方法时，需要确保父元素的定位状态是相对定位，以便让绝对定位的子元素相对于其定位。 行内元素使用 text-align 方法时，需要将内联元素转换为块级元素或者内联块级元素，以便使其受到
+      text-align 的影响。 这些方法提供了多种途径来实现水平居中，每种方法都有其适用的场景。在实际应用中，根据具体布局需求选择最合适的方法，并进行兼容性测试，以确保在各种浏览器和设备上都能正确显示。
+    </div>
+  </body>
+</html>

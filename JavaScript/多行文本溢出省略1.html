@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .container {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* 设置最大行数 */
+        -webkit-line-clamp: 3; /* 显示3行 */
+        /* 兼容 Firefox */
+        display: -moz-box;
+        -moz-box-orient: vertical;
+        -moz-line-clamp: 3;
+        /* 兼容 Safari 和 Chrome */
+        position: relative;
+        max-height: calc(1.2em * 3); /* 每行高度乘以行数 */
+        line-height: 1.2em; /* 行高 */
+      }
+    </style>
+    <title>多行文本溢出省略效果</title>
+  </head>
+  <body>
+    <div class="container">
+      1、既能学会沉下心来专注做好一件事，也能学会用巧力做成事，而不是只会用蛮力做事的思维；2、学会多做利人利己的事情的思维，而不是做各种损人不利己或者既损人也不利己的事情的思维，因为做人做事最好的结果就是双赢；3、学会灵活变通的思维，而不是一条路走到黑的思维，更不是不撞南墙不回头的思维；4、学会打造自己的差异化，唯一性，能与别人做差异化竞争，而不要使自己陷入恶性竞争的境地；5、养成让别人愿意主动来找你合作或者接触的魅力，摆脱一直以来都是你去求着别人给你合作的机会的困境；6、养成看到任何事情，任何人，第一反应都是想“我能从中学到什么，我能从中避免什么”的思维习惯，而不是这个看不惯，那个不喜欢，或者内心毫无波澜，毫不关心外界的一切人和事物的态度；更不能养成眼里只有嫉妒恨的不好的情绪；7、遇到任何问题，都要养成一种会分析问题和解决问题的思路习惯，比如这个问题是不是必须要解决？也没有其他的达成目的的解决办法？如果不得不解决的话该怎么做？需要寻求什么帮助？等等；你会发现这一系列问题下来，思路都会清晰了，而不是一遇到问题，只知道一味地逃避或者有畏难情绪，再或者习惯性抱怨；
+    </div>
+    <script>
+      // 检查是否需要添加后缀以实现省略
+      function checkEllipsis() {
+        var container = document.querySelector('.container')
+        if (container.scrollHeight > container.clientHeight) {
+          container.classList.add('with-ellipsis')
+        }
+      }
+
+      window.onload = checkEllipsis
+      window.onresize = checkEllipsis
+    </script>
+  </body>
+</html>

@@ -2,6 +2,8 @@
 
 ## JavaScript
 
+- [多行文本溢出省略 1](./JavaScript/多行文本溢出省略1.html)
+- [多行文本溢出省略 2](./JavaScript/多行文本溢出省略2.html)
 - [将 RGB 转换为十六进制](./JavaScript/将RGB转换为十六进制.html)
 - [生成随机十六进制](./JavaScript/生成随机十六进制.html)
 - [JavaScript 堆示例-学生管理系统](./JavaScript/JavaScript堆示例-学生管理系统.html)
@@ -49,6 +51,10 @@
 
 ## Html/css
 
+- [垂直居中的方法](./Htmlcss/垂直居中的方法.html)
+- [水平居中的方法](./Htmlcss/水平居中的方法.html)
+- [Flexbox 布局来垂直居中浮动元素](./Htmlcss/Flexbox布局来垂直居中浮动元素.html)
+- [多行文本溢出省略](./Htmlcss/多行文本溢出省略.html)
 - [圣杯布局](./Htmlcss/圣杯布局.html)
 - [双飞翼布局](./Htmlcss/双飞翼布局.html)
 
