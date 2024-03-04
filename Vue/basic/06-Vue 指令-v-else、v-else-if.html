@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="gender === 1">性别：♂ 男</p>
+      <p v-else>性别：♀ 女</p>
+      <hr />
+      <p v-if="score >= 90">评级A：奖励电脑一台</p>
+      <p v-else-if="score >= 70">评级B：奖励周末郊游</p>
+      <p v-else-if="score >= 60">评级C：奖励零食礼包</p>
+      <p v-else>评级D：惩罚一周不能玩手机</p>
+      <!-- 注意: 需要紧挨着 v-if 一起使用 -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          gender: 1,
+          score: 60
+        }
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!--v-on 注册事件 = 添加监听 + 提供处理逻辑 -->
+      <!-- v-on:click="" 中的 v-on:可以简写为@ 工作中我们使用 @click=""-->
+      <button @click="count--">-</button>
+      <span>{{ count }}</span>
+      <button v-on:click="count++">+</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          count: 90
+        }
+      })
+    </script>
+  </body>
+</html>
