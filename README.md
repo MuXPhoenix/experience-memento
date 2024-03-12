@@ -2,6 +2,13 @@
 
 ## JavaScript
 
+- [localStorage](./JavaScript/basic/localStorage.html)
+- [sessionStorage](./JavaScript/basic/sessionStorage.html)
+- [click 点击](./JavaScript/case/事件/click点击.html)
+- [keydown 按键按下](./JavaScript/case/事件/keydown按键按下.html)
+- [load 加载](./JavaScript/case/事件/load加载.html)
+- [mouseover 鼠标悬停](./JavaScript/case/事件/mouseover鼠标悬停.html)
+- [submit 提交](./JavaScript/case/事件/submit提交.html)
 - [多行文本溢出省略 1](./JavaScript/多行文本溢出省略1.html)
 - [多行文本溢出省略 2](./JavaScript/多行文本溢出省略2.html)
 - [将 RGB 转换为十六进制](./JavaScript/将RGB转换为十六进制.html)

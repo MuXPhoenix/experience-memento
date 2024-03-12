@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Submit事件示例</title>
+  </head>
+  <body>
+    <form id="registrationForm">
+      <input type="text" id="username" placeholder="用户名" required />
+      <input type="password" id="password" placeholder="密码" required />
+      <button type="submit">注册</button>
+    </form>
+
+    <script>
+      const form = document.getElementById('registrationForm')
+      form.addEventListener('submit', function (event) {
+        event.preventDefault() // 阻止表单默认提交行为
+
+        // 在这里执行表单验证和提交逻辑
+        const username = document.getElementById('username').value
+        const password = document.getElementById('password').value
+
+        if (username && password) {
+          // 执行提交逻辑，比如向服务器发送注册请求
+          console.log('提交表单 - 用户名：' + username + '，密码：' + password)
+        } else {
+          alert('用户名和密码不能为空')
+        }
+      })
+    </script>
+  </body>
+</html>

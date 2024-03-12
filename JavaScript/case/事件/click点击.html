@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Click事件示例</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myButton">点击我</button>
+
+    <script>
+      const button = document.getElementById('myButton')
+      button.addEventListener('click', function () {
+        button.classList.add('highlight')
+      })
+    </script>
+  </body>
+</html>

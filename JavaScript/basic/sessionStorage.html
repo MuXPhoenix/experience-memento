@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 存储数据
+      sessionStorage.setItem('name', 'jack')
+      sessionStorage.setItem('age', 18)
+
+      // 获取数据
+      var name = sessionStorage.getItem('name')
+      var age = sessionStorage.getItem('age')
+
+      console.log(name) // "jack"
+      console.log(age) // 18
+
+      // 移除数据
+      sessionStorage.removeItem('name')
+
+      // 移除所有数据
+      sessionStorage.clear()
+
+      // 存储复杂数据类型
+      sessionStorage.setItem('data', JSON.stringify({ name: 'jack', age: 18 }))
+
+      // 获取复杂数据类型
+      var data = JSON.parse(sessionStorage.getItem('data'))
+
+      console.log(data) // {name:"jack",age:18}
+    </script>
+  </body>
+</html>

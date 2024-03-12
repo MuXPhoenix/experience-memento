@@ -24,7 +24,15 @@ function rowRenderer({ key, index, style }) {
 
 // React组件
 function App() {
-  return <List width={300} height={500} rowCount={list.length} rowHeight={30} rowRenderer={rowRenderer} />
+  return (
+    <List
+      width={300}
+      height={500}
+      rowCount={list.length}
+      rowHeight={30}
+      rowRenderer={rowRenderer}
+    />
+  )
 }
 
 export default App

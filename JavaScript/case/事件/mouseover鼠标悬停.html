@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Mouseover事件示例</title>
+    <style>
+      #imageContainer {
+        position: relative;
+        display: inline-block;
+      }
+      #infoBox {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        padding: 5px;
+        border: 1px solid #ccc;
+      }
+      img {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imageContainer">
+      <img src="./img/2.jpg" alt="Your Image" />
+      <div id="infoBox">这是一张美丽的图片</div>
+    </div>
+
+    <script>
+      const imageContainer = document.getElementById('imageContainer')
+      const infoBox = document.getElementById('infoBox')
+
+      imageContainer.addEventListener('mouseover', function () {
+        infoBox.style.display = 'block'
+      })
+
+      imageContainer.addEventListener('mouseout', function () {
+        infoBox.style.display = 'none'
+      })
+    </script>
+  </body>
+</html>
