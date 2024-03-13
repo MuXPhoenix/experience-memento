@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>响应式导航栏</title>
+    <style>
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        background-color: #333;
+        color: white;
+      }
+      .nav-item {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .navbar {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#" class="nav-item">Home</a>
+      <a href="#" class="nav-item">About</a>
+      <a href="#" class="nav-item">Services</a>
+      <a href="#" class="nav-item">Contact</a>
+    </div>
+  </body>
+</html>

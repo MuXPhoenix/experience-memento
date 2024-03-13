@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex输入框布局</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+      }
+
+      .form-group {
+        display: flex;
+        align-items: center;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .form-group label {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .form-group input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+      }
+
+      .form-group button {
+        background: #007bff;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-group">
+      <label for="name">姓名:</label>
+      <input type="text" id="name" placeholder="请输入姓名" />
+      <button>提交</button>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="请输入邮箱" />
+      <button>发送</button>
+    </div>
+  </body>
+</html>

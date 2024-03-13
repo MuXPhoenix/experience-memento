@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex百分比布局</title>
+    <style>
+      .Grid {
+        display: flex;
+      }
+
+      .Grid-cell {
+        flex: 1;
+        border: 1px solid #333;
+        padding: 10px;
+      }
+
+      .Grid-cell.u-full {
+        flex: 0 0 100%;
+      }
+
+      .Grid-cell.u-1of2 {
+        flex: 0 0 50%;
+      }
+
+      .Grid-cell.u-1of3 {
+        flex: 0 0 33.3333%;
+      }
+
+      .Grid-cell.u-1of4 {
+        flex: 0 0 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Grid">
+      <div class="Grid-cell u-1of4">25%宽度</div>
+      <div class="Grid-cell">自动分配剩余空间</div>
+      <div class="Grid-cell u-1of3">33.33%宽度</div>
+    </div>
+  </body>
+</html>

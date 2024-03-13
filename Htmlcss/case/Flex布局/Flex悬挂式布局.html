@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex悬挂式布局</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .main-column {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .image-column {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #f8f9fa;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-column">
+      <h2>Main Column</h2>
+      <p>
+        This is the main content of the page.This is the main content of the
+        page. This is the main content of the page. This is the main content of
+        the page. This is the main content of the page. This is the main content
+        of the page. This is the main content of the page.
+      </p>
+    </div>
+
+    <div class="image-column">
+      <h2>Image Column</h2>
+      <img src="./img/2.jpg" alt="Placeholder Image" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三栏等高布局</title>
+    <style>
+      .container {
+        display: flex;
+        flex: 1;
+      }
+      .sidebar,
+      .content,
+      .right-sidebar {
+        flex: 1;
+      }
+      .sidebar {
+        background-color: antiquewhite;
+      }
+      .content {
+        background-color: lavender;
+      }
+      .right-sidebar {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">Sidebar</div>
+      <div class="content">Content</div>
+      <div class="right-sidebar">Right Sidebar</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex两栏布局</title>
+    <style>
+      .container {
+        display: flex;
+      }
+      .sidebar {
+        flex: 0 0 200px; /* 固定宽度的侧边栏 */
+        background-color: lightgray;
+      }
+      .content {
+        flex: 1; /* 自适应宽度的内容区域 */
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">Sidebar</div>
+      <div class="content">Content</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex骰子布局</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .dice {
+        display: flex;
+        width: 200px;
+        height: 200px;
+        border: 1px solid #333;
+      }
+      .dot {
+        width: 28%;
+        height: 28%;
+        background-color: black;
+        border-radius: 50%;
+        margin: 2%;
+      }
+      /* 单项目 */
+      .one {
+        justify-content: center;
+      }
+      .one1 {
+        justify-content: flex-end;
+      }
+      .one2 {
+        align-items: center;
+      }
+      .one3 {
+        justify-content: center;
+        align-items: center;
+      }
+      .one4 {
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .one5 {
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      /* 双项目 */
+      .two1 {
+        justify-content: space-between;
+      }
+      .two2 {
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .two3 {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .two4 {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      .two5 div:nth-child(2) {
+        align-self: center;
+      }
+      .two6 {
+        justify-content: space-between;
+      }
+      .two6 div:nth-child(2) {
+        align-self: flex-end;
+      }
+      /* 三项目 */
+      .three div:nth-child(2) {
+        align-self: center;
+      }
+      .three div:nth-child(3) {
+        align-self: flex-end;
+      }
+      /* 四项目 */
+      .four1 {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-content: space-between;
+      }
+      /* 六项目 */
+      .six1 {
+        flex-wrap: wrap;
+        align-content: space-between;
+      }
+      .six2 {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 单项目 -->
+    <!-- 首先，只有左上角1个点的情况。Flex布局默认就是首行左对齐 -->
+    <div class="dice">
+      <div class="dot"></div>
+    </div>
+    <!-- 设置项目的对齐方式，就能实现居中对齐和右对齐。 -->
+    <div class="dice one">
+      <div class="dot"></div>
+    </div>
+    <div class="dice one1">
+      <div class="dot"></div>
+    </div>
+
+    <!-- 设置交叉轴对齐方式，可以垂直移动主轴。 -->
+    <div class="dice one2">
+      <div class="dot"></div>
+    </div>
+
+    <div class="dice one3">
+      <div class="dot"></div>
+    </div>
+
+    <div class="dice one4">
+      <div class="dot"></div>
+    </div>
+
+    <div class="dice one5">
+      <div class="dot"></div>
+    </div>
+    <!-- 双项目 -->
+    <div class="dice two1">
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="dice two2">
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="dice two3">
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="dice two4">
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="dice two5">
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="dice two6">
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <!-- 三项目 -->
+    <div class="dice three">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <!-- 四项目 -->
+    <div class="dice four1">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <!-- 六项目 -->
+    <div class="dice six1">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="dice six2">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </body>
+</html>
