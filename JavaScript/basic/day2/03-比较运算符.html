@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      console.log(3 > 5) // false
+      console.log(3 >= 3) // true
+      console.log(2 == 2) // true
+      // 比较运算符有隐式转换 把'2' 转换为 2  双等号 只判断值
+      console.log(2 == '2') // true
+      // console.log(undefined === null)
+      // === 全等 判断 值 和 数据类型都一样才行
+      // 以后判断是否相等 请用 ===
+      console.log(2 === '2') // false
+      console.log(NaN === NaN) // false 不等于任何人，包括他自己
+      console.log(2 !== '2') // true
+      console.log(2 != '2') // false
+      console.log('-------------------------')
+      console.log('a' < 'b') // true
+      console.log('aa' < 'ab') // true
+      console.log('aa' < 'aac') // true
+      console.log('-------------------------')
+      // 需要注意的是，isNaN() 函数有一个缺陷，即它会将非数字类型的值（如字符串、布尔值、对象等）转换为数字，然后再进行判断。这意味着，如果传入的参数不是数字类型，但可以被转换为数字，则 isNaN() 函数可能会返回错误的结果。
+      console.log(isNaN('42')) // false
+      console.log(isNaN('1.23')) // false
+      console.log(isNaN(true)) // false
+      console.log(isNaN({})) // true
+      console.log('-------------------------')
+      // 为了避免这个问题，可以使用 ES6 中的 Number.isNaN() 静态方法。
+      console.log(Number.isNaN(NaN)) // true
+      console.log(Number.isNaN('hello')) // false
+      console.log(Number.isNaN(42)) // false
+      console.log(Number.isNaN(undefined)) // false
+      console.log(Number.isNaN('42')) // false
+      console.log(Number.isNaN('1.23')) // false
+      console.log(Number.isNaN(true)) // false
+      console.log(Number.isNaN({})) // false
+    </script>
+  </body>
+</html>

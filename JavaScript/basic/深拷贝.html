@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const obj1 = {
+        name: 'Alice',
+        age: 30,
+        address: {
+          city: 'New York',
+          country: 'USA'
+        }
+      }
+      const obj3 = JSON.parse(JSON.stringify(obj1))
+
+      // 修改原始对象的属性值
+      obj1.age = 32
+      obj1.address.city = 'Los Angeles'
+
+      console.log(obj3.age) // 30，因为是深拷贝，与原始数据完全独立
+      console.log(obj3.address.city) // 'San Francisco'，因为深拷贝已经创建了全新的对象
+    </script>
+  </body>
+</html>
